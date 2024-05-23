@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<h2>Calculator</h2>
+
+<!-- Form for entering numbers and selecting an operation -->
+<form action="/calculate" method="post">
+    <input type="text" name="num1" placeholder="First number"> <!-- Field for entering the first number -->
+    <select name="operation"> <!-- Dropdown list with operations -->
+        <option value="ADD">+</option> <!-- Option for addition -->
+        <option value="SUBTRACT">-</option> <!-- Option for subtraction -->
+        <option value="MULTIPLY">*</option> <!-- Option for multiplication -->
+        <option value="DIVIDE">/</option> <!-- Option for division -->
+    </select>
+    <input type="text" name="num2" placeholder="Second number"> <!-- Field for entering the second number -->
+    <input type="submit" value="Calculate"> <!-- Button to submit the form and perform calculations -->
+</form>
+
+<div id="result">
+    {{#result}}
+        <p>{{result}}</p>
+    {{/result}}
+    {{#error}}
+        <p>{{error}}</p>
+    {{/error}}
+</div>
+
+</body>
+</html>
